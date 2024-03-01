@@ -1,0 +1,114 @@
+import logo from './logo.svg';
+import './App.css';
+import {useState} from 'react';
+
+function App() {
+  const [parentCnt, setParentCount] = useState(0);
+  function parentAddCount(){
+    setParentCount(parentCnt+1);
+  }
+
+  {/**
+   * useState for Checkbox Practice
+   */}
+  const[like, setLike] = useState(true);
+  function handleCheckboxChange(e){
+    setLike(e.target.checked);
+  }
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <div>JerryTest</div>
+
+        {/**
+         * Checkbox Practice
+         */}
+        <CheckPractice isLike={like} onChangeFunction={handleCheckboxChange}/>
+        {/* <input type="checkbox" checked={like} onChange={handleCheckboxChange}/>
+        <label>You {like ? "like" : "don't like"} this</label> */}
+
+        {/**
+         * Conditional operator Practice
+         */}
+         {/* <ul>
+          <Item name="jerry" isReady={true}/>
+          <Item name="mandy" isReady={true}/>
+          <Item name="gary" isReady={false}/>
+         </ul> */}
+
+        {/**
+         * React Component Practice
+         */}
+        {/* <JrTest name="jerry"/>
+        <JrTest name="tom"/>
+        <JrTest name="nobody"/> */}
+
+        {/**
+         * Button Practice
+         */}
+        {/* <Btn_Test_Single/>
+        <Btn_Test_Single/>
+        <Btn_Test_Multiple count={parentCnt} onClick={parentAddCount}/>
+        <Btn_Test_Multiple count={parentCnt} onClick={parentAddCount}/> */}
+      </header>
+    </div>
+  );
+}
+
+function CheckPractice({isLike, onChangeFunction}){
+  return (
+    <>
+      <input type="checkbox" checked={isLike} onChange={onChangeFunction}/>
+      <label>You {isLike ? "like" : "don't like"} this</label>
+    </>
+  );
+}
+
+function Item({name, isReady}){
+  return(
+    <li className="item">
+      {name} {isReady && "ready"}
+    </li>
+  );
+}
+
+function JrTest({name}){
+  return(
+    <h3>Hello, {name}</h3>
+  );
+}
+
+function Btn_Test_Single(){
+  const [count, setCount] = useState(0);
+  function addCount(){
+    setCount(count+1);
+  }
+  return(
+    <button onClick={addCount}>
+      click {count} times
+    </button>
+  );
+}
+
+function Btn_Test_Multiple({count, onClick}){
+  return(
+    <button onClick={onClick}>
+      Click {count} times
+    </button>
+  );
+}
+
+export default App;

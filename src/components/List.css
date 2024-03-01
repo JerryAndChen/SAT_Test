@@ -1,0 +1,26 @@
+.boxContainer{
+    height:170px;
+    overflow-y:auto;
+    scrollbar-color: transparent #CDD3F5;
+    scrollbar-width: thin;
+}
+.box{
+    background-color:#fff;
+    border-left:3px solid #7891CE;
+    margin:8px 0px;
+    height:35px;
+    align-items:center;
+    display:flex;
+}
+.bottom{
+    bottom:16px;
+}
+.cross{
+    border:none;
+    background-color:transparent;
+    color:#D3D9F5;
+    margin-left:auto;
+}
+.done{
+    text-decoration: line-through;
+}

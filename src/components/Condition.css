@@ -1,0 +1,30 @@
+.btn-box {
+    display:inline-block;
+    vertical-align:middle;
+    width: 30px;
+    height: 15px;
+    border-radius:100px;
+    background-color: #fff;
+    box-shadow: 0px 3px 0px rgba(0,0,0,.13) inset;
+}
+.btn-box .btn {
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    background-color: #C7CFF8;
+    margin-left: 0;
+    transition: .5s;
+    box-shadow:1px 2px 5px rgba(0,0,0,.3);
+}
+.none_checkbox {
+    position:absolute;
+    opacity:0;
+}
+.none_checkbox:checked + .btn-box {
+    background-color: #97AEF5;
+}
+.none_checkbox:checked + .btn-box .btn {
+    margin-left: 15px;
+    /* margin-right:20px; */
+}
